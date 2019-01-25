@@ -1,7 +1,11 @@
 package com.jetherrodrigues.config;
 
+import java.util.Arrays;
+
+import javax.jms.ConnectionFactory;
 import javax.jms.Queue;
 
+import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -23,5 +27,16 @@ public class QueueConfiguration {
     @Bean("instrumentQueue")
     public Queue instrumentQueue(@Value("${app.queue.instrument}") String instrumentQueue) {
         return new ActiveMQQueue(instrumentQueue);
+    }
+
+    @Bean
+    public ConnectionFactory getActiveMQConnectionFactory() {
+        ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory("vm://localhost?broker.persistent=false");      
+        // activeMQConnectionFactory.setBrokerURL("tcp://0.0.0.0:61616");  
+        // activeMQConnectionFactory.setUserName("admin");
+        // activeMQConnectionFactory.setPassword("admin");
+        activeMQConnectionFactory.setTrustAllPackages(true);
+
+        return activeMQConnectionFactory;
     }
 }

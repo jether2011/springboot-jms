@@ -2,6 +2,8 @@ package com.jetherrodrigues.resource;
 
 import java.io.Serializable;
 
+import javax.validation.Valid;
+
 import com.jetherrodrigues.domain.Instrument;
 import com.jetherrodrigues.response.MessageResponse;
 import com.jetherrodrigues.service.InstrumentService;
@@ -13,6 +15,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -65,9 +68,8 @@ public class InstrumentResource implements Serializable {
 	 * 
 	 * @return 200 - OK
 	 */
-    @PostMapping
-    @Async
-    public ResponseEntity<MessageResponse> save(Instrument instrument) {
+    @PostMapping    
+    public ResponseEntity<MessageResponse> save(@Valid @RequestBody Instrument instrument) {
         instrumentService.produce(instrument);
         return ResponseEntity.ok().body(new MessageResponse(HttpStatus.OK, "The object was saved into the Queue: " + instrument));
     }

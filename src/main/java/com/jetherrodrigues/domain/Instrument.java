@@ -75,14 +75,14 @@ public final class Instrument implements Serializable {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder()
-            .append("[ Acquisition { ")
+            .append("[ Instrument { ")
             .append("id=")
             .append(this.id)
-            .append("name=")
+            .append(", name=")
             .append(this.name)
-            .append("code=")
+            .append(", code=")
             .append(this.code)
-            .append("created=")
+            .append(", created=")
             .append(this.created)            
             .append(" }]");
         return builder.toString();
