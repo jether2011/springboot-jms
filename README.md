@@ -8,13 +8,18 @@ This application uses:
 
 # App URL
 
-API access at: https://jms-jr.herokuapp.com/api/v1/{"acquisition", "instrument"}
+Resources: `acquisition`, `instrument`
+
+API access at: https://jms-jr.herokuapp.com/api/v1/[resources]
+
 Swagger access at: 
+
 Swagger Doc access at: 
 
 # Endpoints
 
 Resources (examples to use and test): 
+
 `POST`
 
 ### Instruments
