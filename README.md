@@ -12,9 +12,9 @@ Resources: `acquisition`, `instrument`
 
 API access at: https://jms-jr.herokuapp.com/api/v1/[resources]
 
-Swagger access at: 
+Swagger access at: https://jms-jr.herokuapp.com/swagger-ui.html
 
-Swagger Doc access at: 
+Swagger Doc access at: https://jms-jr.herokuapp.com/v2/api-docs
 
 # Endpoints
 
