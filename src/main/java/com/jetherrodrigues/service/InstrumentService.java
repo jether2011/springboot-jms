@@ -16,4 +16,5 @@ public interface InstrumentService extends Serializable {
 	Mono<Instrument> save(Instrument instrument);
 	Flux<Instrument> findAll();
 	Mono<Instrument> findById(String id);
+	void produce(Instrument instrument);
 }

@@ -16,4 +16,5 @@ public interface AcquisitionService extends Serializable {
 	Mono<Acquisition> save(Acquisition acquisition);
 	Flux<Acquisition> findAll();
 	Mono<Acquisition> findById(String id);
+	void produce(Acquisition acquisition);
 }

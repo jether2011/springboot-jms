@@ -2,6 +2,8 @@ package com.jetherrodrigues.resource;
 
 import java.io.Serializable;
 
+import javax.validation.Valid;
+
 import com.jetherrodrigues.domain.Acquisition;
 import com.jetherrodrigues.response.MessageResponse;
 import com.jetherrodrigues.service.AcquisitionService;
@@ -13,6 +15,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -67,9 +70,8 @@ public class AcquisitionResource implements Serializable {
 	 */
 	@PostMapping
     @Async
-    public ResponseEntity<MessageResponse> save(Acquisition acquisition) {
-        // TODO: implementar o save na fila
-
+    public ResponseEntity<MessageResponse> save(@Valid @RequestBody Acquisition acquisition) {
+        acquisitionService.produce(acquisition);
         return ResponseEntity.ok().body(new MessageResponse(HttpStatus.OK, "The object was saved into the Queue"));
     }
 }
