@@ -8,8 +8,11 @@ import com.jetherrodrigues.service.InstrumentService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +25,7 @@ import static com.jetherrodrigues.util.Constants.*;
  */
 @RestController
 @RequestMapping(API + V1 + INSTRUMENT)
+@EnableAsync
 public class InstrumentResource implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -61,6 +65,8 @@ public class InstrumentResource implements Serializable {
 	 * 
 	 * @return 200 - OK
 	 */
+    @PostMapping
+    @Async
     public ResponseEntity<MessageResponse> save(Instrument instrument) {
         // TODO: implementar o save na fila
 
