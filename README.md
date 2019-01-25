@@ -1,16 +1,32 @@
 # Springboot - JMS
-Springboot JMS
+
+This application uses:
+1. SpringBoot 2
+2. ReactiveMongo
+3. JmsTemplate (ActiveMQ)
+4. Mongo ATLAS (Mongo cluster on cloud)
 
 # App URL
 
-Access at: `https://jms-jr.herokuapp.com/`
+API access at: https://jms-jr.herokuapp.com/api/v1/{"acquisition", "instrument"}
+Swagger access at: 
+Swagger Doc access at: 
 
 # Endpoints
 
 Resources (examples to use and test): 
-1. `POST`
+`POST`
 
-### JS
+### Instruments
+
+```json
+{
+	"name":"SJC Pluviometer Station",
+	"code":"JR2019"
+}
+```
+
+##### JS
 
 ```js
 var settings = {
@@ -32,7 +48,7 @@ console.log(response);
 });
 ```
 
-### CURL
+##### CURL
 
 ```sh
 curl -X POST \
@@ -46,7 +62,7 @@ http://localhost:8090/api/v1/instrument \
 }'
 ```
 
-### NODE Unirest
+##### NODE Unirest
 
 ```js
 var unirest = require("unirest");
@@ -72,7 +88,7 @@ console.log(res.body);
 });
 ```
 
-### JAVA Unirest
+##### JAVA Unirest
 
 ```java
 HttpResponse<String> response = Unirest.post("http://localhost:8090/api/v1/instrument")
