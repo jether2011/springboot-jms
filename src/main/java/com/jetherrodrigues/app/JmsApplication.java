@@ -7,6 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 
+/**
+ * @author Jether Rois
+ */
 @SpringBootApplication
 @ComponentScan(basePackages = "com.jetherrodrigues")
 @EntityScan("com.jetherrodrigues.domain")

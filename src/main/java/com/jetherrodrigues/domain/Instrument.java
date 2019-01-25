@@ -7,7 +7,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * @author Jether Rois
+ */
+@Document(collection = "instruments")
 public final class Instrument implements Serializable {
 
     private static final long serialVersionUID = 1L;
