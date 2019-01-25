@@ -61,4 +61,20 @@ public final class Acquisition implements Serializable {
     public Instrument getInstrument() {
         return this.instrument;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder()
+            .append("[ Acquisition { ")
+            .append("id=")
+            .append(this.id)
+            .append("value=")
+            .append(this.value)
+            .append("created=")
+            .append(this.created)
+            .append("instrument=")
+            .append(this.instrument)
+            .append(" }]");
+        return builder.toString();
+    }
 }

@@ -69,6 +69,6 @@ public class InstrumentResource implements Serializable {
     @Async
     public ResponseEntity<MessageResponse> save(Instrument instrument) {
         instrumentService.produce(instrument);
-        return ResponseEntity.ok().body(new MessageResponse(HttpStatus.OK, "The object was saved into the Queue"));
+        return ResponseEntity.ok().body(new MessageResponse(HttpStatus.OK, "The object was saved into the Queue: " + instrument));
     }
 }

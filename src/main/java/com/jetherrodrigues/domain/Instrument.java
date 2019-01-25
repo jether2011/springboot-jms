@@ -71,4 +71,20 @@ public final class Instrument implements Serializable {
 	public void setCreated(LocalDateTime created) {
 		this.created = created;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder()
+            .append("[ Acquisition { ")
+            .append("id=")
+            .append(this.id)
+            .append("name=")
+            .append(this.name)
+            .append("code=")
+            .append(this.code)
+            .append("created=")
+            .append(this.created)            
+            .append(" }]");
+        return builder.toString();
+    }
 }

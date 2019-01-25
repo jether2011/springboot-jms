@@ -72,6 +72,6 @@ public class AcquisitionResource implements Serializable {
     @Async
     public ResponseEntity<MessageResponse> save(@Valid @RequestBody Acquisition acquisition) {
         acquisitionService.produce(acquisition);
-        return ResponseEntity.ok().body(new MessageResponse(HttpStatus.OK, "The object was saved into the Queue"));
+        return ResponseEntity.ok().body(new MessageResponse(HttpStatus.OK, "The object was saved into the Queue: " + acquisition));
     }
 }
