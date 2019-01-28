@@ -37,7 +37,7 @@ Resources (examples to use and test):
 var settings = {
 "async": true,
 "crossDomain": true,
-"url": "http://localhost:8090/api/v1/instrument",
+"url": "https://jms-jr.herokuapp.com/api/v1/instrument",
 "method": "POST",
 "headers": {
     "content-type": "application/json",
@@ -57,7 +57,7 @@ console.log(response);
 
 ```sh
 curl -X POST \
-http://localhost:8090/api/v1/instrument \
+https://jms-jr.herokuapp.com/api/v1/instrument \
 -H 'cache-control: no-cache' \
 -H 'content-type: application/json' \
 -H 'postman-token: c9108a7a-402b-9879-0a51-310a8e1d1e79' \
@@ -72,7 +72,7 @@ http://localhost:8090/api/v1/instrument \
 ```js
 var unirest = require("unirest");
 
-var req = unirest("POST", "http://localhost:8090/api/v1/instrument");
+var req = unirest("POST", "https://jms-jr.herokuapp.com/api/v1/instrument");
 
 req.headers({
 "postman-token": "0e6621d4-e455-4400-4230-035a7f3acc10",
@@ -96,7 +96,7 @@ console.log(res.body);
 ##### JAVA Unirest
 
 ```java
-HttpResponse<String> response = Unirest.post("http://localhost:8090/api/v1/instrument")
+HttpResponse<String> response = Unirest.post("https://jms-jr.herokuapp.com/api/v1/instrument")
 .header("content-type", "application/json")
 .header("cache-control", "no-cache")
 .header("postman-token", "f3ad9ac4-2fb0-9cc3-8075-d2724ce2ddd5")
@@ -123,7 +123,7 @@ The `acquisition` endpoint serialize the arrived object and post into a acquisit
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://localhost:8090/api/v1/acquisition",
+  "url": "https://jms-jr.herokuapp.com/api/v1/acquisition",
   "method": "POST",
   "headers": {
     "content-type": "application/json",
@@ -142,7 +142,7 @@ $.ajax(settings).done(function (response) {
 
 ```sh
 curl -X POST \
-  http://localhost:8090/api/v1/acquisition \
+  https://jms-jr.herokuapp.com/api/v1/acquisition \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: a639058b-2efc-0e4d-fd56-4bd1e73f2042' \
@@ -160,7 +160,7 @@ curl -X POST \
 ```js
 var unirest = require("unirest");
 
-var req = unirest("POST", "http://localhost:8090/api/v1/acquisition");
+var req = unirest("POST", "https://jms-jr.herokuapp.com/api/v1/acquisition");
 
 req.headers({  
   "cache-control": "no-cache",
@@ -185,7 +185,7 @@ req.end(function (res) {
 ##### JAVA Unirest
 
 ```java
-HttpResponse<String> response = Unirest.post("http://localhost:8090/api/v1/acquisition")
+HttpResponse<String> response = Unirest.post("https://jms-jr.herokuapp.com/api/v1/acquisition")
   .header("content-type", "application/json")
   .header("cache-control", "no-cache")  
   .body("{\n\t\"value\": 0.12,\n\t\"instrument\": {\n\t\t\"id\": \"5c4f1a50c4060226a6e93c92\"\n\t}\n}\n")
@@ -200,7 +200,7 @@ HttpResponse<String> response = Unirest.post("http://localhost:8090/api/v1/acqui
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://localhost:8090/api/v1/instrument/all",
+  "url": "https://jms-jr.herokuapp.com/api/v1/instrument/all",
   "method": "GET",
   "headers": {
     "cache-control": "no-cache",    
@@ -213,7 +213,7 @@ $.ajax(settings).done(function (response) {
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("http://localhost:8090/api/v1/instrument/all")
+HttpResponse<String> response = Unirest.get("https://jms-jr.herokuapp.com/api/v1/instrument/all")
   .header("cache-control", "no-cache")  
   .asString();
 ```
@@ -235,7 +235,7 @@ HttpResponse<String> response = Unirest.get("http://localhost:8090/api/v1/instru
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://localhost:8090/api/v1/acquisition/all",
+  "url": "https://jms-jr.herokuapp.com/api/v1/acquisition/all",
   "method": "GET",
   "headers": {
     "cache-control": "no-cache",
@@ -248,7 +248,7 @@ $.ajax(settings).done(function (response) {
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("http://localhost:8090/api/v1/acquisition/all")
+HttpResponse<String> response = Unirest.get("https://jms-jr.herokuapp.com/api/v1/acquisition/all")
   .header("cache-control", "no-cache")  
   .asString();
 ```

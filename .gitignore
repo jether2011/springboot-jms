@@ -26,3 +26,4 @@
 
 ### others ###
 jms-app.log
+*.gz
