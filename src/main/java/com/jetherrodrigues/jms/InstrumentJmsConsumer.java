@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
+import reactor.core.publisher.Mono;
+
 import com.jetherrodrigues.domain.Instrument;
 import com.jetherrodrigues.service.InstrumentService;
 
@@ -31,8 +33,11 @@ public class InstrumentJmsConsumer extends AbstractConsumer<Instrument> {
     @Override
     public void consume(Instrument instrument) {
         try {
-            instrumentService.save(instrument);   
-            logger.info("instrument {} was consumed by instrument consumer.", instrument);
+            Mono<Instrument> created = instrumentService.save(instrument);   
+            logger.info("Mono instrument {} was consumed by instrument consumer and created into datyabse.", 
+                created
+                    .blockOptional()
+                    .get());
         } catch (Exception e) {
             logger.error("an error occurred when trying to save the instrument {}.", instrument, e);
 			throw e;

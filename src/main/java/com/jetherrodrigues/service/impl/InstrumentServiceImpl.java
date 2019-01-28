@@ -33,6 +33,7 @@ public class InstrumentServiceImpl implements InstrumentService {
 
     @Override
     public Mono<Instrument> save(Instrument instrument) {
+        logger.info("Instrument to save: {}", instrument);
         return this.repository.save(instrument);
     }
 

@@ -10,8 +10,6 @@ import com.jetherrodrigues.service.AcquisitionService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +26,6 @@ import static com.jetherrodrigues.util.Constants.*;
  */
 @RestController
 @RequestMapping(API + V1 + ACQUISITION)
-@EnableAsync
 public class AcquisitionResource implements Serializable {
 
     private static final long serialVersionUID = 1L;

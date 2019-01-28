@@ -1,7 +1,5 @@
 package com.jetherrodrigues.config;
 
-import java.util.Arrays;
-
 import javax.jms.ConnectionFactory;
 import javax.jms.Queue;
 
