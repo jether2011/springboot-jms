@@ -6,6 +6,10 @@ This application uses:
 3. JmsTemplate (ActiveMQ)
 4. Mongo ATLAS (Mongo cluster on cloud)
 
+Image to illustrate the app:
+
+![Spring boot 2 + JMS](https://github.com/jether2011/springboot-jms/blob/master/springboot-heroku.png)
+
 # App URL
 
 Resources: `acquisition`, `instrument`
